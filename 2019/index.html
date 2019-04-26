@@ -41,7 +41,8 @@
     .slick-initialized .slick-slide img{
     	margin:0 auto;
     }
-</style>
+	</style>
+
   </head>
   <body>
   	
@@ -286,7 +287,7 @@
 			<div class="mu-venue-area">
 				<div class="row">
 
-					<div class="col-md-6">
+					<div class="col-md-6" id="hotel-map">
 						<div class="mu-venue-map">
 							<iframe src="https://j.map.baidu.com/-ldnO" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 						</div>
@@ -674,12 +675,14 @@
 
 							<div class="mu-title-area">
 								<h2 class="mu-heading-title">Contact Us</h2>
+
 							</div>
 							<!-- Start title spnonsors brand logo -->
 							<div class="mu-sponsors-content" style="text-align:center">
-							
-								
-									<div class="col-md-2 col-sm-4 col-xs-4"  style="display:inline-block;float:none">
+
+								<p>邮件联系我们： <a href="mailto:rsg-2019-beijing-core-member@googlegroups.com">rsg-2019-beijing-core-member@googlegroups.com</a></p>
+
+								<div class="col-md-2 col-sm-4 col-xs-4"  style="display:inline-block;float:none">
 										
 										<div class="mu-sponsors-single" style="padding-top:15px;">
 											<img src="assets/images/Agile1001-wechat.jpg" width="128px" alt="Brand Logo">
@@ -783,8 +786,22 @@
     <!-- Custom js -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 
-	
-	
-    
+	<script type="text/javascript">
+        $(document).ready(function(){
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(!flag){
+                $("#hotel-map").hide();
+			}
+        });
+	</script>
+
   </body>
 </html>
